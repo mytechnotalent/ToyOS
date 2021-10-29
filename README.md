@@ -23,13 +23,13 @@ set_video_mode:
 	int 0x10
 	ret
 
-get_char_input:						; wait for a numeric char
-	xor ah, ah
-	int 0x16
+get_char_input:						    
+	xor ah, ah                  				; wait for a numeric char
+	int 0x16            
 	cmp al, 0x30						; compare if numeric 0
-	jl get_char_input					; jmp if less than and restart loop
+	jl get_char_input				    	; jmp if less than and restart loop
 	cmp al, 0x39						; compare if numeric 9
-	jg get_char_input					; jmp if greater than and restart loop
+	jg get_char_input				    	; jmp if greater than and restart loop
 	mov ah, 0x0e
 	int 0x10
 	jmp get_char_input					; re-start internal subroutine
