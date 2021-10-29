@@ -1,4 +1,4 @@
-![image](https://github.com/mytechnotalent/STM32F401CCUx_PA0ButtonHandler/blob/main/PAO_ButtonHandler.png?raw=true)
+![image](https://raw.githubusercontent.com/mytechnotalent/ToyOS/main/ToyOS.png)
 
 ## FREE Reverse Engineering Self-Study Course [HERE](https://github.com/mytechnotalent/Reverse-Engineering-Tutorial)
 
@@ -36,6 +36,14 @@ get_char_input:						; wait for a numeric char
 
 times 0x1fe-($-$$) db 0
 dw 0xaa55
+```
+
+## STEP 2: Run
+```bash
+sudo apt-get install nasm
+sudo apt-get install qemu-system-x86_64
+nasm bootsector.asm -f bin -o bootsector.bin
+qemu-system-x86_64 bootsector.bin
 ```
 
 ## License
