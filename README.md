@@ -7,7 +7,9 @@
 # ToyOS
 ToyOS is a simple x86 OS that only accepts numeric values into the input stream and returns them to a standard out console.
 
-## STEP 1: Code
+<br>
+
+# STEP 1: Code
 ```asm
 mov bp, 0xffff						; set the stack base
 mov sp, bp						; set the top of the stack to base
@@ -38,7 +40,7 @@ times 0x1fe-($-$$) db 0
 dw 0xaa55
 ```
 
-## STEP 2: Run
+# STEP 2: Run
 ```bash
 sudo apt-get install nasm
 sudo apt-get install qemu-system-x86_64
@@ -46,5 +48,7 @@ nasm bootsector.asm -f bin -o bootsector.bin
 qemu-system-x86_64 bootsector.bin
 ```
 
-## License
+<br>
+
+# License
 [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
